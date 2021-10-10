@@ -1,0 +1,34 @@
+import pyautogui
+import time
+import sys
+from time import sleep
+
+def main():
+
+    # failsafe
+    pyautogui.FAILSAFE = True
+
+
+def print_slowly(text):
+    for c in text:
+        print(c, end='')
+        sys.stdout.flush()
+        sleep(1)
+print("Starting",  end='')
+print_slowly("....")
+print("Go")
+
+def holdkey(key, seconds):
+    pyautogui.keyDown(key)
+    time.sleep(seconds)
+    pyautogui.keyUp(key)
+
+    # route start
+    holdkey('w', 7.50)
+    holdkey('e', 1)
+    holdkey('e', 1)
+    holdkey('e', 1)
+
+
+if __name__ == "__main__":
+    main()
